@@ -2,12 +2,14 @@
 import { Component } from '@angular/core';
 import { EstudiantesService } from '../estudiantes.service';
 import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-estudiante-form',
-  standalone: true, // Marca el componente como autónomo
-  imports: [CommonModule, FormsModule], // Importa FormsModule para ngModel
+  standalone: true,
+  imports: [CommonModule, FormsModule, MatInputModule, MatButtonModule],
   templateUrl: './estudiante-form.component.html'
 })
 export class EstudianteFormComponent {
@@ -26,7 +28,6 @@ export class EstudianteFormComponent {
       carrera: this.carrera,
     });
     alert('Estudiante agregado exitosamente');
-    // Limpia el formulario
     this.nombre = '';
     this.apellido = '';
     this.mail = '';

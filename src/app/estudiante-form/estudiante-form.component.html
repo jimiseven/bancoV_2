@@ -1,7 +1,23 @@
-<form (ngSubmit)="addEstudiante()">
-  <input [(ngModel)]="nombre" name="nombre" placeholder="Nombre" required />
-  <input [(ngModel)]="apellido" name="apellido" placeholder="Apellido" required />
-  <input [(ngModel)]="mail" name="mail" placeholder="Mail" required />
-  <input [(ngModel)]="carrera" name="carrera" placeholder="Carrera" required />
-  <button type="submit">Agregar Estudiante</button>
+<form (ngSubmit)="addEstudiante()" class="form-container">
+  <mat-form-field appearance="fill">
+    <mat-label>Nombre</mat-label>
+    <input matInput [(ngModel)]="nombre" name="nombre" required />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Apellido</mat-label>
+    <input matInput [(ngModel)]="apellido" name="apellido" required />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input matInput [(ngModel)]="mail" name="mail" required />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Carrera</mat-label>
+    <input matInput [(ngModel)]="carrera" name="carrera" required />
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit">Agregar Estudiante</button>
 </form>
