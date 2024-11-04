@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EstudiantesListComponent } from './estudiantes-list/estudiantes-list.component';
 import { EstudianteFormComponent } from './estudiante-form/estudiante-form.component';
@@ -9,4 +9,11 @@ import { EstudianteFormComponent } from './estudiante-form/estudiante-form.compo
   imports: [CommonModule, EstudiantesListComponent, EstudianteFormComponent],
   templateUrl: './app.component.html'
 })
-export class AppComponent {}
+export class AppComponent {
+  @ViewChild(EstudiantesListComponent) estudiantesList!: EstudiantesListComponent;
+
+  onEstudianteAgregado() {
+    // Llama al método en el componente de lista para recargar los estudiantes
+    this.estudiantesList.ngOnInit();
+  }
+}

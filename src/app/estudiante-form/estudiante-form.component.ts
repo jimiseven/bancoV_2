@@ -1,5 +1,4 @@
-// src/app/estudiante-form/estudiante-form.component.ts
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { EstudiantesService } from '../estudiantes.service';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
@@ -13,6 +12,8 @@ import { CommonModule } from '@angular/common';
   templateUrl: './estudiante-form.component.html'
 })
 export class EstudianteFormComponent {
+  @Output() estudianteAgregado = new EventEmitter<void>();
+
   nombre = '';
   apellido = '';
   mail = '';
@@ -28,6 +29,11 @@ export class EstudianteFormComponent {
       carrera: this.carrera,
     });
     alert('Estudiante agregado exitosamente');
+
+    // Emitir el evento después de guardar el estudiante
+    this.estudianteAgregado.emit();
+
+    // Limpia el formulario
     this.nombre = '';
     this.apellido = '';
     this.mail = '';

@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
 })
 export class EstudiantesListComponent implements OnInit {
   estudiantes: any[] = [];
-  displayedColumns: string[] = ['nombre', 'apellido', 'mail', 'carrera'];
+  displayedColumns: string[] = ['nombre', 'apellido', 'mail', 'carrera']; // Define las columnas a mostrar
 
   constructor(private estudiantesService: EstudiantesService) {}
 

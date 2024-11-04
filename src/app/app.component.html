@@ -1,5 +1,5 @@
 <div class="main-container">
   <h1>Gestión de Estudiantes</h1>
-  <app-estudiante-form></app-estudiante-form>
-  <app-estudiantes-list></app-estudiantes-list>
+  <app-estudiante-form (estudianteAgregado)="onEstudianteAgregado()"></app-estudiante-form>
+  <app-estudiantes-list #estudiantesList></app-estudiantes-list>
 </div>
